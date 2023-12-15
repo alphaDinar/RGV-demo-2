@@ -1,0 +1,508 @@
+.headBox, .headBox video, .headSheet{
+  border-radius: 20px;
+}
+.headBox{
+  background: black;
+  margin: 15px;
+  height: 600px;
+  position: relative;
+}
+.headBox video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.headSheet{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.055);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topNav, .lowNav{
+  width: calc(95% - 60px);
+  padding: 0 2.5%;
+  margin: 15px 30px;
+}
+
+.topNav{
+  height: 8vh;
+  background: rgba(255, 255, 255, 0.797);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topNav img{
+  height: 90%;
+  object-fit: contain;
+}
+.topNav nav{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.topNav nav a{
+  color: black;
+}
+.topNav nav a:nth-last-child(1){
+  background: salmon;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.topNav nav legend{
+  display: none;
+}
+
+.headBox article{
+  margin: 0 30px;
+  display: flex;
+  padding: 0 2.5%;
+  max-width: 35%;
+  flex-direction: column;
+  color: white;
+}
+
+.headBox article strong{
+  font-size: 2.4rem;
+}
+
+
+
+.lowNav{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+
+.lowNav div{
+  background: white;
+  display: flex;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 0.95rem;
+}
+.lowNav div i{
+  font-size: 1.2rem;
+  color: var(--confirm);
+}
+.lowNav div h3{
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.lowNav a{
+  background: var(--confirm);
+  border-radius: 5px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: white;
+}
+
+
+.facilityBox, .rentBox, .blogBox{
+  width: calc(95% - 90px);
+  padding: 0 calc(2.5% + 45px);
+}
+.galleryBox h3, .rentBox h3, .facilityBox h3, .blogBox h3{
+  font-size: 1.6rem;
+}
+
+.galleryBox, .facilityBox{
+  width: calc(97.5% - 45px);
+  padding: 1vh 0 1vh calc(2.5% + 45px);
+}
+
+.galleryBox, .facilityBox{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.galleryBox a{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: black;
+}
+.galleryBox a img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.galleryBox a article{
+  display: flex;
+  width: 90%;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+.galleryBox a p{
+  display: flex;
+  flex-direction: column;
+}
+.galleryBox a article legend{
+  border: 1px dotted darkgray;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.rentBox{
+  background: ghostwhite; 
+  padding: 2vh calc(2.5% + 45px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.rentBox .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.rentBox .left article{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: calc(100% - 20px);
+}
+
+.rentBox .left article p{
+  display: flex;
+  flex-direction: column;
+}
+.rentBox .left article div{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.rentBox .left article div legend{
+  background: var(--confirm);
+  background: salmon;
+  min-width: 40px;
+  min-height: 40px;
+  color: wheat;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.rentBox .left a{
+  background: black;
+  color: white;
+  margin-right: auto;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.rentBox .right{
+  display: flex;
+  padding: 20px;
+}
+.rentBox .right img{
+  width: 100%;
+  border-radius: 25px;
+}
+
+.facilityBox a{
+  display: flex;
+  width: 200px;
+  padding: 15px;
+  height: 110px;
+  border-radius: 10px;
+  display: flex;
+  background: rgb(251, 234, 202);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.facilityBox a > *:nth-child(3){
+  display: flex;
+  justify-content: flex-end;
+}
+.facilityBox a > *:nth-child(3) i{
+  width: 30px;
+  height: 30px;
+  border: 2px dotted darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.facilityBox strong{
+  font-weight: 400;
+}
+
+.blogBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+  gap: 2rem;
+  background: ghostwhite;
+  padding: 2vh calc(2.5% + 45px);
+}
+
+.blogBox .left{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.blog{
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.blog div{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.blog .topImage{
+  border-radius: 10px;
+  height: 130px;
+}
+.blog .topImage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  object-position: center;
+}
+
+.blog header{
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.blog header .dp{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center;
+}
+.blog header article{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.blog header article legend{
+  display: flex;
+  flex-direction: column;
+}
+.blog p{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.blog a{
+  background: var(--confirm);
+  background: salmon;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+.blog nav img{
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 1px;
+  object-position: center;
+}
+
+.blogBox .right{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.blogBox .right article{
+  display: flex;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  align-items: center;
+  gap: 1rem;
+}
+.blogBox .right article img{
+  width: 130px;
+  border-radius: 10px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+.blogBox .right article p{
+  display: flex;
+  flex-direction: column;
+}
+.blogBox .right section{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.blogBox .right button{
+  background: var(--confirm);
+  color: white;
+  padding: 8px 8px;
+  border-radius: 3px;
+  margin-left: auto;
+}
+
+@media all and (max-width:1150px){
+  .blogBox{
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width:1000px){
+  .headBox article{
+    max-width: 60%;
+  }
+  .headBox article strong{
+    font-size: 2rem;
+  }
+  .galleryBox a img{
+    height: 250px;
+  }
+  .rentBox{
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width:800px){
+  .lowNav{
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width:700px){
+  .headBox{
+    margin: 10px;
+    height: 450px;
+  }
+  .headSheet{
+    align-items: center;
+  }
+  .headBox article{
+    max-width: 100%;
+    text-align: center;
+  }
+  .topNav{
+    width: max-content;
+  }
+  .topNav nav legend{
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: salmon;
+    color: white;
+    border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  .topNav nav{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    top: 10px;
+    border-radius: 0 15px 15px 0;
+    padding: 10px;
+    width: 150px;
+    left: -170px;
+    transition: 0.4s ease;
+  }
+  .topNav nav.change{
+    left: 10px;
+  }
+}
+@media all and (max-width:650px){
+  .galleryBox h3, .rentBox h3, .facilityBox h3, .blogBox h3{
+    font-size: 1.1rem;
+  }
+  .lowNav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .galleryBox, .facilityBox, .rentBox, .blogBox{
+    width: calc(95% - 20px);
+    padding: 0 calc(2.5% + 10px);
+    align-items: center;
+  }
+  .rentBox .left{
+    align-items: center;
+  }
+  .galleryBox a img{
+    height: 210px;
+  }
+}
+@media all and (max-width:530px){
+  .facilityBox a{
+    width: calc(100% - 30px);
+  }
+}
+@media all and (max-width:500px){
+  .rentBox .left{
+    text-align: center;
+  }
+  .rentBox .left div{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .rentBox .left h3{
+    text-align: center;
+  }
+  .rentBox .left article a{
+    margin: auto;
+  }
+}
+@media all and (max-width:450px){
+  .headBox{
+    height: 380px;
+  }
+  .headBox article strong{
+    font-size: 1.3rem;
+  }
+  .lowNav div{
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+  }
+}
+@media all and (max-width:300px){
+  .headBox{
+    height: 320px;
+  }
+  .headBox article small{
+    display: none;
+  }
+}
