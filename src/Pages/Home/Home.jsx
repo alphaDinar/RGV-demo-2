@@ -159,21 +159,21 @@ const Home = () => {
               <legend>1</legend>
               <p>
                 <strong>Forever Ownership.</strong>
-                <small>lorem ipsum da skliec as,ms sklcmasklm</small>
+                <small>World-class luxury flats, quality workmanship</small>
               </p>
             </div>
             <div>
               <legend>2</legend>
               <p>
                 <strong>Customize to the fullest.</strong>
-                <small>lorem ipsum da skliec as,ms sklcmasklm ipsum da skliec as.</small>
+                <small>World-class luxury flats, quality workmanship</small>
               </p>
             </div>
             <div>
               <legend>3</legend>
               <p>
                 <strong>You control when you buy.</strong>
-                <small>lorem ipsum da skliec as,ms sklcmasklm</small>
+                <small>World-class luxury flats, quality workmanship</small>
               </p>
             </div>
           </article>
