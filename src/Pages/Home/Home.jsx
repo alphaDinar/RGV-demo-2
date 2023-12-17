@@ -16,7 +16,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-import { Autoplay } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination,Autoplay } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -47,6 +47,7 @@ const Home = () => {
   const [menuToggled, setMenuToggled] = useState(false);
   const [gallerySlideNum, setGallerySlideNum] = useState(0);
   const [facilitySlideNum, setFacilitySlideNum] = useState(0);
+  const [testBoxPadding, setTestBoxPadding] = useState('5vh 0');
 
   useEffect(() => {
     if (window.innerWidth > 1400) {
@@ -56,7 +57,7 @@ const Home = () => {
     } else if (window.innerWidth < 850 && window.innerWidth > 450) {
       setGallerySlideNum(2);
     } else if (window.innerWidth < 450) {
-      setGallerySlideNum(1);
+      setGallerySlideNum(2);
     }
 
     if (window.innerWidth > 1400) {
@@ -68,8 +69,15 @@ const Home = () => {
     } else if (window.innerWidth < 800 && window.innerWidth > 500) {
       setFacilitySlideNum(2);
     } else if (window.innerWidth < 530) {
-      setFacilitySlideNum(1);
+      setFacilitySlideNum(2);
     }
+
+    if(window.innerWidth > 600){
+      setTestBoxPadding('5vh 0');
+    }else{
+      setTestBoxPadding('2vh 0');
+    }
+    
 
     AOS.init({
       duration: "1000",
@@ -138,12 +146,7 @@ const Home = () => {
               <Link>
                 <img src={el} />
                 <article>
-                  <p>
-                    {icon('chair')}
-                    <strong>Room</strong>
-                  </p>
-
-                  <legend>{icon('north_east')}</legend>
+                  <span>Living Room</span>
                 </article>
               </Link>
             </SwiperSlide>
@@ -211,70 +214,124 @@ const Home = () => {
         </Swiper>
       </section>
 
-      <section className={styles.blogBox}>
-        <section className={styles.left}>
+
+      <section className={styles.blogBoxHolder}>
+        <header style={{ padding: '1rem 0' }}>
           <h3>Our News & Blog</h3>
-          <section className={styles.blog}>
-            <div className={styles.topImage}>
-              <img src={sample5} />
-            </div>
-
-            <div>
-              <header>
-                <article>
-                  <img src={face} className={styles.dp} />
-                  <legend>
-                    <strong>Mr. Emmanuel</strong>
-                    <small>Ghana</small>
-                  </legend>
-                </article>
-                <small>
-                  <strong>Published: </strong>
-                  <span>30 mins ago.</span>
-                </small>
-              </header>
-
-              <p>
-                <strong>Welcome To Royal Golf Views</strong>
-                <span className='cut'>
-                  World-class luxury flats, quality workmanship with attention to detail. Kumasi is the capital of the Ashanti Region of Ghana, also known as the Garden City of Ghana. It is known for its rich Ghanaian Culture and hospitality. Royal Golf Views Apartments is located in a serene area in Kumasi.
-                </span>
-              </p>
-            </div>
-
-            <header>
-              <Link>Read More</Link>
-
-              <p>
-                <nav>
-                  <img src={face} width={30} height={30} alt="" />
-                  <img src={face} width={30} height={30} alt="" />
-                  <img src={face} width={30} height={30} alt="" />
-                </nav>
-                <small>64 comments</small>
-              </p>
-            </header>
-          </section>
-        </section>
-        <section className={styles.right}>
-          <section >
-            {Array(3).fill().map((el) => (
-              <article data-aos="fade-up">
-                <img src={sample6} />
-                <p>
-                  <strong>Buy Real Estate</strong>
-                  <small className='cut'>
-                    World-class luxury flats, quality workmanship with attention to detail. Kumasi is the capital of the Ashanti Region of Ghana, also known as the Garden City of Ghana.
-                  </small>
-                  <sub style={{ color: 'salmon' }}>3 mins ago</sub>
-                </p>
-              </article>
-            ))}
-          </section>
           <button type="">View More</button>
+        </header>
+        <section className={styles.blogBox}>
+          <section className={styles.left}>
+            <section className={styles.blog}>
+              <div className={styles.topImage}>
+                <img src={sample5} />
+              </div>
+
+              <div>
+                <header>
+                  <article>
+                    <img src={face} className={styles.dp} />
+                    <legend>
+                      <strong>Mr. Emmanuel</strong>
+                      <small>Ghana</small>
+                    </legend>
+                  </article>
+                  <small>
+                    <strong>Published: </strong>
+                    <span>30 mins ago.</span>
+                  </small>
+                </header>
+
+                <p>
+                  <strong>Welcome To Royal Golf Views</strong>
+                  <span className='cut'>
+                    World-class luxury flats, quality workmanship with attention to detail. Kumasi is the capital of the Ashanti Region of Ghana, also known as the Garden City of Ghana. It is known for its rich Ghanaian Culture and hospitality. Royal Golf Views Apartments is located in a serene area in Kumasi.
+                  </span>
+                </p>
+              </div>
+
+              <header>
+                <Link>Read More</Link>
+                <p>
+                  <nav>
+                    <img src={face} width={30} height={30} alt="" />
+                    <img src={face} width={30} height={30} alt="" />
+                    <img src={face} width={30} height={30} alt="" />
+                  </nav>
+                  <small>64 comments</small>
+                </p>
+              </header>
+            </section>
+          </section>
+          <section className={styles.right}>
+            <section >
+              {Array(3).fill().map((el) => (
+                <article data-aos="fade-up">
+                  <img src={sample6} />
+                  <p>
+                    <strong>Buy Real Estate</strong>
+                    <small className='cut'>
+                      World-class luxury flats, quality workmanship with attention to detail. Kumasi is the capital of the Ashanti Region of Ghana, also known as the Garden City of Ghana.
+                    </small>
+                    <sub style={{ color: 'salmon' }}>3 mins ago</sub>
+                  </p>
+                </article>
+              ))}
+            </section>
+          </section>
+
+
         </section>
+      </section>
 
 
+      <section className={styles.testimonialBox}>
+                
+        <header>
+          <h3>Testimonials</h3>
+          <span>
+            Don't just take our word for it. Check out what our residents are saying about their experience buying, selling, or renting with Royal Golf Views.
+          </span>
+        </header>
+
+        <Swiper
+          modules={[EffectFade, Pagination,Autoplay]}
+          loop={true}
+          speed={1000}
+          pagination={{
+            dynamicBullets: true,
+          }}
+
+          slidesPerView={window.innerWidth > 600 ? 2 : 1}
+          spaceBetween={15}
+          autoplay={{ delay: 3500, disableOnInteraction: true, pauseOnMouseEnter: true }}
+          style={{ width: '100%', padding : `${testBoxPadding}` }}
+          className={styles.topSwiper}
+        >
+
+        {Array(6).fill().map((el)=>(
+          <SwiperSlide>
+          <Link>
+          {icon('format_quote')}
+            <span className='cut2'>
+              What happens when you find the ideal home not just through specs and photos, but through the voices of those who live there? Scroll down and step into a world of fulfilled dreams, happy surprises, and the transformative power of a perfect address
+            </span>
+
+            <article>
+              <img src={face} />
+              <p>
+                <strong>Mr. Emmanuel</strong>
+                <small style={{color:'darkgray'}}>Businessman</small>
+              </p>
+            </article>
+          </Link>
+          </SwiperSlide>
+        ))}
+          
+        </Swiper>
+
+
+        
       </section>
 
       <footer>

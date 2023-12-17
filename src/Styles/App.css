@@ -4,12 +4,17 @@
   /* gap: 2rem; */
 }
 
-.cut{
+.cut, .cut2{
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.cut{
+  -webkit-line-clamp: 3;
+}
+.cut2{
+  -webkit-line-clamp: 4;
 }
 
 footer form {
