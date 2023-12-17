@@ -518,6 +518,9 @@
     padding: 3rem calc(2.5% + 10px);
     align-items: center;
   }
+  .galleryBox{
+    padding: 1.5rem calc(2.5% + 10px);
+  }
   .blogBox .left{
     align-items: center;
   }
